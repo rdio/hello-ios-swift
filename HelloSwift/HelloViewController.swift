@@ -10,23 +10,23 @@ import UIKit
 
 class HelloViewController: UIViewController, RdioDelegate, RDPlayerDelegate {
     
-    var _playButton: UIButton!
-    var _loginButton: UIButton!
+    @IBOutlet weak var _playButton: UIButton!
+    @IBOutlet weak var _loginButton: UIButton!
+
+    @IBOutlet weak var _leftLevelMonitor: UISlider!
+    @IBOutlet weak var _rightLevelMonitor: UISlider!
+
+    @IBOutlet weak var _positionSlider: UISlider!
+    @IBOutlet weak var _positionLabel: UILabel!
+    @IBOutlet weak var _durationLabel: UILabel!
+    
+    @IBOutlet weak var _currentArtistLabel: UILabel!
+    @IBOutlet weak var _currentTrackLabel: UILabel!
     
     var _loggedIn: Bool = false
     var _playing: Bool = false
     var _paused: Bool = false
     var _seeking: Bool = false
-    
-    var _leftLevelMonitor: UISlider!
-    var _rightLevelMonitor: UISlider!
-    
-    var _positionSlider: UISlider!
-    var _positionLabel: UILabel!
-    var _durationLabel: UILabel!
-    
-    var _currentTrackLabel: UILabel!
-    var _currentArtistLabel: UILabel!
     
     var _timeObserver:AnyObject?
     var _levelObserver:AnyObject?
@@ -66,108 +66,7 @@ class HelloViewController: UIViewController, RdioDelegate, RDPlayerDelegate {
     
     override func loadView() {
         super.loadView()
-        
-        var appFrame = UIScreen.mainScreen().applicationFrame;
-        var view = UIView(frame: appFrame)
-        view.backgroundColor = UIColor.whiteColor()
-        
-        // Play button
-        _playButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
-        _playButton.setTitle("Play", forState: UIControlState.Normal)
-        _playButton.frame = CGRect(x:20, y:20, width:appFrame.size.width - 40, height:40)
-        _playButton.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        _playButton.addTarget(self, action: "playClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(_playButton!)
-        
-        // Login button
-        _loginButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
-        _loginButton.setTitle("Login", forState: UIControlState.Normal)
-        _loginButton.frame = CGRect(x:20, y:70, width:appFrame.size.width - 40, height: 40)
-        _loginButton.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        _loginButton.addTarget(self, action: "loginClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(_loginButton!)
-        
-        // Previous track button
-        var prevButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        prevButton.setTitle("Prev", forState: UIControlState.Normal)
-        var prevFrame = CGRect(x: 20, y: 20, width: 77, height: 40)
-        prevButton.frame = prevFrame
-        prevButton.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        prevButton.addTarget(self, action: "previousClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(prevButton)
-        
-        // Powered by Rdio label
-        var labelFrame = CGRect(x: 20, y: 110, width: appFrame.size.width - 40, height: 40)
-        var rdioLabel = UILabel(frame: labelFrame)
-        rdioLabel.text = "Powered by Rdio®"
-        rdioLabel.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        rdioLabel.textAlignment = NSTextAlignment.Center
-        view.addSubview(rdioLabel)
-        
-        // Next track button
-        var nextButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        nextButton.setTitle("Next", forState: UIControlState.Normal)
-        var nextFrame = CGRect(x: 223, y: 20, width: 77, height: 40)
-        nextButton.frame = nextFrame
-        nextButton.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        nextButton.addTarget(self, action: "nextClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(nextButton)
-        
-        // Left level label
-        var leftLevelLabelFrame = CGRect(x: 20, y: 151, width: 15, height: 21)
-        var leftLevelLabel = UILabel(frame: leftLevelLabelFrame)
-        leftLevelLabel.text = "L"
-        view.addSubview(leftLevelLabel)
-        
-        // Left level
-        var leftSliderFrame = CGRect(x: 65, y: 151, width: 191, height: 28)
-        _leftLevelMonitor = UISlider(frame: leftSliderFrame)
-        _leftLevelMonitor.setValue(0.0, animated: false)
-        view.addSubview(_leftLevelMonitor!)
-        
-        // Right level label
-        var rightLevelLabelFrame = CGRect(x: 20, y: 191, width: 15, height: 21)
-        var rightLevelLabel = UILabel(frame: rightLevelLabelFrame)
-        rightLevelLabel.text = "R"
-        view.addSubview(rightLevelLabel)
-        
-        // Right level
-        var rightSliderFrame = CGRect(x: 65, y: 191, width: 191, height: 28)
-        _rightLevelMonitor = UISlider(frame: rightSliderFrame)
-        _rightLevelMonitor.setValue(0.0, animated: false)
-        view.addSubview(_rightLevelMonitor)
-        
-        // Current artist label
-        var currentArtistFrame = CGRect(x: 20, y: 258, width: 280, height: 25)
-        _currentArtistLabel = UILabel(frame: currentArtistFrame)
-        view.addSubview(_currentArtistLabel)
-        
-        // Current track title
-        var currentTrackFrame = CGRect(x: 20, y: 316, width: 280, height: 25)
-        _currentTrackLabel = UILabel(frame: currentTrackFrame)
-        view.addSubview(_currentTrackLabel)
-        
-        // Position label
-        var posLabelFrame = CGRect(x: 20, y: 287, width: 37, height: 21)
-        _positionLabel = UILabel(frame: posLabelFrame)
-        view.addSubview(_positionLabel)
-        
-        // Duration label
-        var durLabelFrame = CGRect(x: 264, y: 287, width: 37, height: 21)
-        _durationLabel = UILabel(frame: durLabelFrame)
-        view.addSubview(_durationLabel)
-        
-        // Position slider
-        var posSliderFrame = CGRect(x: 65, y:287, width:191, height: 28)
-        _positionSlider = UISlider(frame: posSliderFrame)
-        _positionSlider.addTarget(self, action: "seekStarted", forControlEvents: UIControlEvents.TouchDown)
-        _positionSlider.addTarget(self, action: "seekFinished", forControlEvents: UIControlEvents.TouchUpInside)
-        _positionSlider.addTarget(self, action: "seekFinished", forControlEvents: UIControlEvents.TouchUpOutside)
-        view.addSubview(_positionSlider)
-        
         appDelegate.rdioInstance.delegate = self
-        
-        self.view = view;
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -295,16 +194,16 @@ class HelloViewController: UIViewController, RdioDelegate, RDPlayerDelegate {
     
     // MARK: - UI event and state handling
     
-    func playClicked(sender: UIButton!) {
+    @IBAction func playClicked(sender: UIButton!) {
         if (!_playing) {
-            var keys: [String] = ["t11680039", "t11680092", "t11680148", "t11680205"]
+            var keys: [String] = ["t3176972", "t55901576", "t58720733", "t3655138"]
             player.playSources(keys)
         } else {
             player.togglePause()
         }
     }
     
-    func loginClicked(sender: UIButton!) {
+    @IBAction func loginClicked(sender: UIButton!) {
         if (_loggedIn) {
             appDelegate.rdioInstance.logout()
         } else {
@@ -320,23 +219,23 @@ class HelloViewController: UIViewController, RdioDelegate, RDPlayerDelegate {
             _loginButton.setTitle("Log In", forState: UIControlState.Normal)
         }
     }
-    
-    func nextClicked(sender: UIButton) {
-        player.next()
-    }
-    
-    func previousClicked(sender: UIButton) {
+
+    @IBAction func previousClicked(sender: UIButton) {
         player.previous()
     }
     
-    func seekStarted() {
+    @IBAction func nextClicked(sender: UIButton) {
+        player.next()
+    }
+    
+    @IBAction func seekStarted(sender: UISlider) {
         if (!_playing) {
             return
         }
         _seeking = true
     }
     
-    func seekFinished() {
+    @IBAction func seekFinished(sender: UISlider) {
         if (!_playing) {
             return
         }

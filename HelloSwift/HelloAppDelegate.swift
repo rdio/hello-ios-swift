@@ -18,11 +18,11 @@ class HelloAppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        viewController = HelloViewController()
+        //window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        //viewController = HelloViewController()
         
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+        //window?.rootViewController = viewController
+        //window?.makeKeyAndVisible()
         
         return true
     }

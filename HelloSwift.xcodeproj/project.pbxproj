@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		551A9BCA1A7988B4009CE977 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551A9BC91A7988B4009CE977 /* Rdio.framework */; };
+		55C6AACF1A7B51FF00079CAD /* HelloSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C6AACE1A7B51FF00079CAD /* HelloSwift.storyboard */; };
 		55DF10301A7630CF0096DA1B /* HelloAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DF102F1A7630CF0096DA1B /* HelloAppDelegate.swift */; };
 		55DF10321A7630CF0096DA1B /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DF10311A7630CF0096DA1B /* HelloViewController.swift */; };
 		55DF10371A7630CF0096DA1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DF10361A7630CF0096DA1B /* Images.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		551A9BC91A7988B4009CE977 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
+		55C6AACE1A7B51FF00079CAD /* HelloSwift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HelloSwift.storyboard; sourceTree = "<group>"; };
 		55DF102A1A7630CF0096DA1B /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DF102E1A7630CF0096DA1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DF102F1A7630CF0096DA1B /* HelloAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		55DF10211A7630CF0096DA1B = {
 			isa = PBXGroup;
 			children = (
+				55C6AACE1A7B51FF00079CAD /* HelloSwift.storyboard */,
 				55DF102C1A7630CF0096DA1B /* HelloSwift */,
 				55DF102B1A7630CF0096DA1B /* Products */,
 				55DF10CF1A7633C10096DA1B /* Frameworks */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55DF10371A7630CF0096DA1B /* Images.xcassets in Resources */,
+				55C6AACF1A7B51FF00079CAD /* HelloSwift.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
