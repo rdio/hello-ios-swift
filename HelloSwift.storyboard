@@ -63,13 +63,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Rdio®" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGq-o3-fPq">
-                                <rect key="frame" x="227" y="124" width="145.5" height="20.5"/>
+                                <rect key="frame" x="227" y="124" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-98-fdY">
-                                <rect key="frame" x="26" y="166" width="15" height="20.5"/>
+                                <rect key="frame" x="26" y="168" width="15" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="YXu-l9-bQm"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs0-eJ-kcd">
-                                <rect key="frame" x="26" y="216" width="15" height="20.5"/>
+                                <rect key="frame" x="26" y="218" width="15" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="nuj-xg-W41"/>
                                 </constraints>
@@ -90,10 +90,10 @@
                                 <rect key="frame" x="49" y="162" width="527" height="31"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-UM-Umu">
-                                <rect key="frame" x="49" y="212" width="527" height="31"/>
+                                <rect key="frame" x="49" y="213" width="527" height="31"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jgN-53-CLk">
-                                <rect key="frame" x="84" y="294" width="432" height="31"/>
+                                <rect key="frame" x="84" y="295" width="432" height="31"/>
                                 <connections>
                                     <action selector="seekFinished:" destination="rAZ-ka-nDB" eventType="touchUpInside" id="4nZ-XB-Db8"/>
                                     <action selector="seekFinished:" destination="rAZ-ka-nDB" eventType="touchUpOutside" id="TgO-Om-B4z"/>
@@ -101,19 +101,19 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNO-nT-Q7N">
-                                <rect key="frame" x="26" y="268" width="548" height="20.5"/>
+                                <rect key="frame" x="26" y="269" width="548" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-R6-MLZ">
-                                <rect key="frame" x="26" y="328" width="548" height="20.5"/>
+                                <rect key="frame" x="26" y="330" width="548" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GD-tL-d4t">
-                                <rect key="frame" x="26" y="298" width="50" height="20.5"/>
+                                <rect key="frame" x="26" y="299" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Dxg-4d-vBu"/>
                                 </constraints>
@@ -122,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBs-eE-lvq">
-                                <rect key="frame" x="524" y="298" width="50" height="20.5"/>
+                                <rect key="frame" x="524" y="299" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="ntC-jS-lXk"/>
                                 </constraints>
@@ -180,6 +180,31 @@
                                 <exclude reference="XbD-C3-LWJ"/>
                                 <exclude reference="Q1L-1n-XBn"/>
                                 <exclude reference="l0z-7L-Fbe"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="fEu-eD-mtd"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="fEu-eD-mtd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="fEu-eD-mtd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="fEu-eD-mtd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="fEu-eD-mtd"/>
                             </mask>
                         </variation>
                     </view>
